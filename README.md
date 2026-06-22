@@ -6,7 +6,6 @@ Este repositorio contiene los archivos utilizados para generar la base de datos 
 
 <img width="1872" height="810" alt="image" src="https://github.com/user-attachments/assets/44bf5d61-7485-4f95-9832-27c5e1df0518" />
 
-
 ## Descripción general
 
 El método MPPT emplea una red neuronal multicapa con arquitectura 2-5-1 para estimar la corriente de referencia en el punto de máxima potencia a partir de la temperatura y la irradiancia. Posteriormente, el seguimiento de dicha referencia se realiza mediante controladores de lógica difusa Mamdani.
