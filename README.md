@@ -2,7 +2,7 @@
 
 Algoritmo MPPT basado en una red neuronal artificial (ANN) y controladores de lógica difusa Mamdani para un sistema fotovoltaico conectado a la red.
 
-Este repositorio contiene los archivos utilizados para generar la base de datos fotovoltaica, entrenar una red neuronal para estimar la corriente de referencia Impp, evaluar su error relativo, simular el sistema fotovoltaico conectado a la red y comparar el desempeño de los controladores difusos Mamdani convencional, simplificado y propuesto. La Figura 1 muestra la arquitectura general del algoritmo MPPT y la interacción entre sus principales componentes.
+Este repositorio contiene los archivos utilizados para generar la base de datos fotovoltaica, entrenar una red neuronal para estimar la corriente de referencia `Impp`, evaluar su error relativo, simular el sistema fotovoltaico conectado a la red, comparar el desempeño de los controladores difusos Mamdani convencional, simplificado y propuesto, y validar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta Texas Instruments TMS320F28069M. 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/44bf5d61-7485-4f95-9832-27c5e1df0518"
@@ -16,7 +16,7 @@ Este repositorio contiene los archivos utilizados para generar la base de datos 
 
 ## Descripción general
 
-El método MPPT emplea una red neuronal multicapa con arquitectura 2-5-1 para estimar la corriente de referencia en el punto de máxima potencia a partir de la temperatura y la irradiancia. Posteriormente, el seguimiento de dicha referencia se realiza mediante controladores de lógica difusa Mamdani.
+El método MPPT emplea una red neuronal multicapa con arquitectura 2-5-1 para entrenar una red neuronal para estimar la corriente de referencia `Impp` a partir de la temperatura y la irradiancia. Posteriormente, el seguimiento de dicha referencia se realiza mediante controladores de lógica difusa Mamdani. Además de la evaluación funcional mediante simulación, el repositorio incluye los modelos desarrollados para la validación experimental del tiempo de ejecución (TE) de los algoritmos MPPT sobre la tarjeta Texas Instruments TMS320F28069M.
 
 Se consideran tres esquemas principales:
 
