@@ -36,13 +36,13 @@ La evaluación se realizó mediante dos metodologías complementarias:
 La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarjeta TMS320F28069M para la adquisición de variables, el procesamiento del algoritmo y la generación de la señal PWM utilizada durante la evaluación del TE.
 
 <p align="center">
-  <img src="URL_DE_LA_IMAGEN"
+  <img src="https://github.com/user-attachments/assets/d0dfd79d-05e0-4c2b-b595-44a2faef7b5c"
        alt="Implementación del algoritmo MPPT en la tarjeta TMS320F28069M"
-       width="700">
+       width="650">
 </p>
 
 <p align="center">
-  <em><strong>Figura 2.</strong> Esquema de implementación del algoritmo MPPT en la tarjeta TMS320F28069M para la evaluación experimental del tiempo de ejecución (TE).</em>
+  <em><strong>Figura 2.</strong> Esquema de implementación del algoritmo MPPT en la tarjeta Texas Instruments TMS320F28069M para la adquisición de variables, el procesamiento del algoritmo y la evaluación experimental del tiempo de ejecución (TE).</em>
 </p>
 
 ## Archivos incluidos
