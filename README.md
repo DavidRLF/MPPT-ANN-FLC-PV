@@ -34,9 +34,9 @@ Se consideran tres esquemas principales:
 | `M_Mod_Sim_PV_V1.m` | Define parámetros del sistema PV, convertidor DC-DC, inversor, red eléctrica y controladores para la simulación. |
 | `M_Comp_Sup_Control_FLCs_V1.m` | Compara superficies de control de los sistemas difusos Mamdani considerados. |
 | `S_Mod_Sim_PV_V1.slx` | Modelo principal de simulación del sistema fotovoltaico conectado a la red. |
-| `S_Med_TE_MPPT_Conv_V1.slx` | Modelo para medir el tiempo de ejecución del MPPT con FLC convencional de 49 reglas. |
-| `S_Med_TE_MPPT_Simp_V1.slx` | Modelo para medir el tiempo de ejecución del MPPT con FLC simplificado de 5 reglas. |
-| `S_Med_TE_MPPT_Prop_V1.slx` | Modelo para medir el tiempo de ejecución del MPPT propuesto con FLC de 5 reglas y compensación dinámica. |
+| `S_Med_TE_MPPT_Conv_V1.slx` | Modelo para evaluar experimentalmente el tiempo de ejecución del algoritmo MPPT basado en un FLC Mamdani convencional de 49 reglas sobre la tarjeta TMS320F28069M. |
+| `S_Med_TE_MPPT_Simp_V1.slx` | Modelo para evaluar experimentalmente el tiempo de ejecución del algoritmo MPPT basado en un FLC Mamdani simplificado de 5 reglas sobre la tarjeta TMS320F28069M. |
+| `S_Med_TE_MPPT_Prop_V1.slx` | Modelo para evaluar experimentalmente el tiempo de ejecución del algoritmo MPPT propuesto, basado en un FLC Mamdani de 5 reglas con compensación dinámica, sobre la tarjeta TMS320F28069M. |
 | `49_Rules_MaMPPTCtrlPaperShaikRAfi_V2.fis` | Sistema difuso Mamdani convencional de 49 reglas usado como referencia. |
 | `5_Rules_MaMPPTCtrl_V1.fis` | Sistema difuso Mamdani reducido de 5 reglas. |
 | `dataset_TG_Vmpp_Impp_Pmpp.xlsx` | Base de datos con temperatura, irradiancia y valores de `Vmpp`, `Impp` y `Pmpp`. |
