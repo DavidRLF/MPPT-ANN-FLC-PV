@@ -4,7 +4,15 @@ Algoritmo MPPT basado en una red neuronal artificial (ANN) y controladores de l�
 
 Este repositorio contiene los archivos utilizados para generar la base de datos fotovoltaica, entrenar una red neuronal para estimar la corriente de referencia Impp, evaluar su error relativo, simular el sistema fotovoltaico conectado a la red y comparar el desempeño de los controladores difusos Mamdani convencional, simplificado y propuesto. La Figura 1 muestra la arquitectura general del algoritmo MPPT y la interacción entre sus principales componentes.
 
-<img width="1872" height="810" alt="image" src="https://github.com/user-attachments/assets/44bf5d61-7485-4f95-9832-27c5e1df0518" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/44bf5d61-7485-4f95-9832-27c5e1df0518"
+       alt="Arquitectura general del algoritmo MPPT basado en ANN y FLC"
+       width="900">
+</p>
+
+<p align="center">
+  <em><strong>Figura 1.</strong> Arquitectura general del sistema fotovoltaico conectado a la red y del algoritmo MPPT basado en una red neuronal artificial y controladores difusos Mamdani.</em>
+</p>
 
 ## Descripción general
 
