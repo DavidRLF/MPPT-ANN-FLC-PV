@@ -56,6 +56,3 @@ Se consideran tres esquemas principales:
 
 Los nombres de los archivos se mantienen tal como fueron utilizados durante el desarrollo del proyecto para conservar compatibilidad con los scripts y modelos de Simulink.
 
-## Licencia
-
-Este repositorio se distribuye bajo la licencia MIT.
