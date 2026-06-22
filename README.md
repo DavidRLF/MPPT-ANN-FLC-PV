@@ -51,7 +51,7 @@ Se consideran tres esquemas principales:
 3. Usar `Error_Relativo_V1.m` para evaluar el error relativo de la ANN.
 4. Ejecutar `M_Mod_Sim_PV_V1.m` antes de abrir los modelos de Simulink.
 5. Simular `S_Mod_Sim_PV_V1.slx` para evaluar el sistema PV completo.
-6. Usar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para medir tiempos de ejecución.
+6. Utilizar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para evaluar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta TMS320F28069M.
 7. Usar `M_Comp_Sup_Control_FLCs_V1.m` para comparar las superficies de control de los FLC.
 
 ## Requisitos
