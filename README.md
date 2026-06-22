@@ -38,7 +38,7 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 <p align="center">
   <img src="https://github.com/user-attachments/assets/d0dfd79d-05e0-4c2b-b595-44a2faef7b5c"
        alt="Implementación del algoritmo MPPT en la tarjeta TMS320F28069M"
-       width="650">
+       width="400">
 </p>
 
 <p align="center">
