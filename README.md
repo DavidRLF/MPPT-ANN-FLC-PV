@@ -16,7 +16,7 @@ Este repositorio contiene los archivos utilizados para generar la base de datos 
 
 ## Descripción general
 
-El método MPPT emplea una red neuronal multicapa con arquitectura 2-5-1 para entrenar una red neuronal para estimar la corriente de referencia `Impp` a partir de la temperatura y la irradiancia. Posteriormente, el seguimiento de dicha referencia se realiza mediante controladores de lógica difusa Mamdani. Además de la evaluación funcional mediante simulación, el repositorio incluye los modelos desarrollados para la validación experimental del tiempo de ejecución (TE) de los algoritmos MPPT sobre la tarjeta Texas Instruments TMS320F28069M.
+El método MPPT emplea una red neuronal multicapa con arquitectura 2-5-1 para estimar la corriente de referencia Impp a partir de la temperatura y la irradiancia. La selección de esta arquitectura se complementa mediante una comparación con redes de 3, 7, 10 y 15 neuronas en la capa oculta.
 
 Se consideran tres esquemas principales:
 
@@ -27,6 +27,8 @@ Se consideran tres esquemas principales:
 ## Evaluación adicional de la ANN
 
 Para complementar la evaluación de la ANN, el archivo `Error_Relativo_V2.m` evalúa la estimación de `Impp` en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. En esta evaluación, el error relativo medio fue de 0.0443% y el error relativo máximo de 0.1010%.
+
+Además, el archivo `M_Dis_Net_Impp_V2.m` compara arquitecturas con 3, 5, 7, 10 y 15 neuronas en la capa oculta. Cada arquitectura se entrena 10 veces manteniendo la misma base de datos, normalización, algoritmo de entrenamiento, funciones de activación y división de 70% para entrenamiento, 15% para validación y 15% para prueba. Los errores relativos medios obtenidos fueron 0.071431%, 0.055395%, 0.056669%, 0.055273% y 0.054390% para las arquitecturas 2-3-1, 2-5-1, 2-7-1, 2-10-1 y 2-15-1, respectivamente.
 
 ## Evaluación experimental del tiempo de ejecución
 
@@ -55,6 +57,7 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 |---|---|
 | `M_Gen_Base_Datos_PVNREL_V1.m` | Genera la base de datos del arreglo fotovoltaico usando el modelo PV tipo NREL y obtiene variables como `Vmpp`, `Impp` y `Pmpp`. |
 | `M_Dis_Net_Impp_V1.m` | Entrena la red neuronal ANN para estimar `Impp` a partir de temperatura e irradiancia. También permite guardar la red entrenada y exportar parámetros. |
+| `M_Dis_Net_Impp_V2.m` | Entrena la ANN para estimar `Impp` y compara arquitecturas con 3, 5, 7, 10 y 15 neuronas en la capa oculta mediante 10 entrenamientos por arquitectura, manteniendo las mismas condiciones de entrenamiento y división de los datos. |
 | `Error_Relativo_V1.m` | Evalúa el error relativo entre la salida de la ANN y el modelo fotovoltaico completo. |
 | `Error_Relativo_V2.m` | Evalúa el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. |
 | `M_Mod_Sim_PV_V1.m` | Define parámetros del sistema PV, convertidor DC-DC, inversor, red eléctrica y controladores para la simulación. |
@@ -74,12 +77,13 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 
 1. Ejecutar `M_Gen_Base_Datos_PVNREL_V1.m` para generar o revisar la base de datos PV.
 2. Ejecutar `M_Dis_Net_Impp_V1.m` para entrenar o cargar la red neuronal ANN.
-3. Usar `Error_Relativo_V1.m` para evaluar el error relativo de la ANN.
-4. Ejecutar `Error_Relativo_V2.m` para evaluar el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos.
-5. Ejecutar `M_Mod_Sim_PV_V1.m` antes de abrir los modelos de Simulink.
-6. Simular `S_Mod_Sim_PV_V1.slx` para evaluar el sistema PV completo.
-7. Utilizar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para evaluar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta TMS320F28069M.
-8. Usar `M_Comp_Sup_Control_FLCs_V1.m` para comparar las superficies de control de los FLC.
+3. Ejecutar `M_Dis_Net_Impp_V2.m` para entrenar la ANN y comparar las arquitecturas con 3, 5, 7, 10 y 15 neuronas en la capa oculta.
+4. Usar `Error_Relativo_V1.m` para evaluar el error relativo de la ANN.
+5. Ejecutar `Error_Relativo_V2.m` para evaluar el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos.
+6. Ejecutar `M_Mod_Sim_PV_V1.m` antes de abrir los modelos de Simulink.
+7. Simular `S_Mod_Sim_PV_V1.slx` para evaluar el sistema PV completo.
+8. Utilizar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para evaluar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta TMS320F28069M.
+9. Usar `M_Comp_Sup_Control_FLCs_V1.m` para comparar las superficies de control de los FLC.
 
 ## Requisitos
 
