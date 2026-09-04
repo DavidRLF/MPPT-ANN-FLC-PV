@@ -26,7 +26,7 @@ Se consideran tres esquemas principales:
 
 ## Evaluación adicional de la ANN
 
-Para complementar la evaluación de la ANN, el archivo `Error_Impp_V2.m` evalúa la estimación de `Impp` en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. En esta evaluación, el error relativo medio fue de 0.0443% y el error relativo máximo de 0.1010%.
+Para complementar la evaluación de la ANN, el archivo `Error_Relativo_V2.m` evalúa la estimación de `Impp` en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. En esta evaluación, el error relativo medio fue de 0.0443% y el error relativo máximo de 0.1010%.
 
 ## Evaluación experimental del tiempo de ejecución
 
@@ -56,7 +56,7 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 | `M_Gen_Base_Datos_PVNREL_V1.m` | Genera la base de datos del arreglo fotovoltaico usando el modelo PV tipo NREL y obtiene variables como `Vmpp`, `Impp` y `Pmpp`. |
 | `M_Dis_Net_Impp_V1.m` | Entrena la red neuronal ANN para estimar `Impp` a partir de temperatura e irradiancia. También permite guardar la red entrenada y exportar parámetros. |
 | `Error_Relativo_V1.m` | Evalúa el error relativo entre la salida de la ANN y el modelo fotovoltaico completo. |
-| `Error_Impp_V2.m` | Evalúa el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. |
+| `Error_Relativo_V2.m` | Evalúa el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. |
 | `M_Mod_Sim_PV_V1.m` | Define parámetros del sistema PV, convertidor DC-DC, inversor, red eléctrica y controladores para la simulación. |
 | `M_Comp_Sup_Control_FLCs_V1.m` | Compara superficies de control de los sistemas difusos Mamdani considerados. |
 | `S_Mod_Sim_PV_V1.slx` | Modelo principal de simulación del sistema fotovoltaico conectado a la red. |
