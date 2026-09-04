@@ -24,6 +24,10 @@ Se consideran tres esquemas principales:
 - Controlador Mamdani simplificado de 5 reglas.
 - Controlador Mamdani propuesto de 5 reglas con compensación dinámica mediante la variación del error.
 
+## Evaluación adicional de la ANN
+
+Para complementar la evaluación de la ANN, el archivo `Error_Impp_V2.m` evalúa la estimación de `Impp` en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. En esta evaluación, el error relativo medio fue de 0.0443% y el error relativo máximo de 0.1010%.
+
 ## Evaluación experimental del tiempo de ejecución
 
 Con el fin de analizar la viabilidad de implementación del algoritmo MPPT en plataformas embebidas, el tiempo de ejecución (TE) de los controladores difusos Mamdani convencional, simplificado y propuesto fue evaluado experimentalmente sobre la tarjeta de desarrollo Texas Instruments TMS320F28069M.
@@ -52,6 +56,7 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 | `M_Gen_Base_Datos_PVNREL_V1.m` | Genera la base de datos del arreglo fotovoltaico usando el modelo PV tipo NREL y obtiene variables como `Vmpp`, `Impp` y `Pmpp`. |
 | `M_Dis_Net_Impp_V1.m` | Entrena la red neuronal ANN para estimar `Impp` a partir de temperatura e irradiancia. También permite guardar la red entrenada y exportar parámetros. |
 | `Error_Relativo_V1.m` | Evalúa el error relativo entre la salida de la ANN y el modelo fotovoltaico completo. |
+| `Error_Impp_V2.m` | Evalúa el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos. |
 | `M_Mod_Sim_PV_V1.m` | Define parámetros del sistema PV, convertidor DC-DC, inversor, red eléctrica y controladores para la simulación. |
 | `M_Comp_Sup_Control_FLCs_V1.m` | Compara superficies de control de los sistemas difusos Mamdani considerados. |
 | `S_Mod_Sim_PV_V1.slx` | Modelo principal de simulación del sistema fotovoltaico conectado a la red. |
@@ -70,10 +75,11 @@ La Figura 2 muestra el esquema de implementación del algoritmo MPPT en la tarje
 1. Ejecutar `M_Gen_Base_Datos_PVNREL_V1.m` para generar o revisar la base de datos PV.
 2. Ejecutar `M_Dis_Net_Impp_V1.m` para entrenar o cargar la red neuronal ANN.
 3. Usar `Error_Relativo_V1.m` para evaluar el error relativo de la ANN.
-4. Ejecutar `M_Mod_Sim_PV_V1.m` antes de abrir los modelos de Simulink.
-5. Simular `S_Mod_Sim_PV_V1.slx` para evaluar el sistema PV completo.
-6. Utilizar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para evaluar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta TMS320F28069M.
-7. Usar `M_Comp_Sup_Control_FLCs_V1.m` para comparar las superficies de control de los FLC.
+4. Ejecutar `Error_Relativo_V2.m` para evaluar el error relativo de la ANN en 55 combinaciones de temperatura e irradiancia no incluidas en la malla utilizada para generar la base de datos.
+5. Ejecutar `M_Mod_Sim_PV_V1.m` antes de abrir los modelos de Simulink.
+6. Simular `S_Mod_Sim_PV_V1.slx` para evaluar el sistema PV completo.
+7. Utilizar los modelos `S_Med_TE_MPPT_Conv_V1.slx`, `S_Med_TE_MPPT_Simp_V1.slx` y `S_Med_TE_MPPT_Prop_V1.slx` para evaluar experimentalmente el tiempo de ejecución de los algoritmos MPPT en la tarjeta TMS320F28069M.
+8. Usar `M_Comp_Sup_Control_FLCs_V1.m` para comparar las superficies de control de los FLC.
 
 ## Requisitos
 
